@@ -4,6 +4,9 @@ from .serializers import UserSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.renderers import JSONRenderer
+from drf_renderer_xlsx.renderers import XLSXRenderer
+from drf_renderer_xlsx.mixins import XLSXFileMixin
 
 
 class UserView(APIView):
@@ -11,6 +14,7 @@ class UserView(APIView):
     API endpoint that allows users to be viewed.
     """
     permission_classes = [permissions.IsAuthenticated]
+    renderer_classes = [JSONRenderer, XLSXRenderer, XLSXFileMixin]
 
     @staticmethod
     def get(request):
