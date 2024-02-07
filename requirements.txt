@@ -1,5 +1,5 @@
 asgiref==3.2.7
-Django==3.1.14
+Django==3.2.24
 djangorestframework==3.11.2
 drf-renderer-xlsx==0.3.7
 et-xmlfile==1.0.1
